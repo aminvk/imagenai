@@ -1,9 +1,9 @@
 import React from 'react'
 
-const AddTransformationPage = () => {
+const page = () => {
   return (
-    <div>AddTransformationPage</div>
+    <div>page</div>
   )
 }
 
-export default AddTransformationPage
+export default page
