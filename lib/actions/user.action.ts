@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 
-import User from "../database/modal/user.model";
+import User from "../database/modal/user.modal";
 import { connectToDatabase } from "../database/db";
 import { handleError } from "../utils";
 
