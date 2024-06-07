@@ -1,4 +1,5 @@
 import { Document, Schema, model, models } from "mongoose";
+import { string } from "zod";
 
 export interface IImage extends Document {
   title: string;
@@ -13,7 +14,7 @@ export interface IImage extends Document {
   color?: string;
   prompt?: string;
   author: {
-    _id: string;
+    _id: string | number;
     firstName: string;
     lastName: string;
   }
@@ -25,7 +26,7 @@ const ImageSchema = new Schema({
   title: { type: String, required: true },
   transformationType: { type: String, required: true },
   publicId: { type: String, required: true },
-  secureURL: { type: URL, required: true },
+  secureURL: { type: String, required: true },
   width: { type: Number },
   height: { type: Number },
   config: { type: Object },
@@ -38,6 +39,6 @@ const ImageSchema = new Schema({
   updatedAt: { type: Date, default: Date.now }
 });
 
-const Image = models?.Image || model('Image', ImageSchema);
+const Image = models?.Image || model('Images', ImageSchema);
 
 export default Image;
